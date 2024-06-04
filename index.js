@@ -44,7 +44,7 @@ app.use(require('./src/middlewares/findSearchSortPage'))
 app.all('/', (req, res) => {
     res.send({
         error: false,
-        message: 'Welcome to RENT A CAR API',
+        message: 'Welcome to HOTEL API',
         documents: {
             swagger: '/documents/swagger',
             redoc: '/documents/redoc',

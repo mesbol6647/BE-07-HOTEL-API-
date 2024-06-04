@@ -19,8 +19,12 @@ module.exports = {
     },
 
 
-    isStaffOrisAdmin: (req, res, next) => {
-        if (req.user && (req.user.isAdmin || req.user.isStaff)) {
+    isStaff: (req, res, next) => {
+
+        // return next()
+
+
+        if (req.user && req.user.isActive && (req.user.isAdmin || req.user.isStaff)) {
             next()
         } else {
             res.errorStatusCode = 403
