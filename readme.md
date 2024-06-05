@@ -15,7 +15,23 @@
     <h2 id="description">Description</h2>
 
 
-This project is a backend application utilizing various methods for search, filter, sorting, skip, and session cookies. It is designed to enable users to efficiently search, filter, and manage data.
+Booking Hotel Room Project <br>
+Customers;
+
+-can select start and end date and see the list of available rooms on selected dates.<br>
+-can not reserve rooms which are reserved by other customers on selected time period.<br>
+-can choose a room on the list and reserve that room, but can not reserve more than one room on a selected time period,<br>
+-can see the list of their reservations including past ones.<br>
+-can list, create, read their reservations.<br>
+-can not update, delete reservations. <br><br>
+Admins;
+
+-can make CRUD operations on Room table,<br>
+-can make CRUD operations on Customer (User) table,<br>
+-can make CRUD operations on Reservation table,<br>
+-It can be createdId and updatedId in Room model.<br> <br>
+
+There will be searching, sorting and pagination capabilities on list views.
 
 
 <h2 id="technologies">💻 Features </h2>
