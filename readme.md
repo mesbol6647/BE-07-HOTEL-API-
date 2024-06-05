@@ -20,13 +20,20 @@ This project is a backend application utilizing various methods for search, filt
 
 <h2 id="technologies">💻 Features </h2>
 
-- Search: Allows users to search the database with specific keywords.
-- Filter: Enables filtering of data based on specific criteria.
-- Sorting: Provides the ability to sort data in ascending or descending order.
-- Skip: Allows skipping a specified number of data entries to access subsequent entries.
+- $or :Allows users to query the database to find documents that match any of the specified conditions.
+- $nor:Enables querying the database to find documents that do not match any of the specified conditions.
+- $nin:Provides the ability to query the database to find documents where a specified field's value is not in a given array of values.
+- distinct:Retrieves distinct values for a specified field across a single collection.
+- Custom Filter:Allows users to define and apply custom filtering logic to query the database based on specific criteria. This feature enables complex and flexible data retrieval by combining multiple conditions and logical operators.
+- Populate:Mongoose method used to replace a path in a document with actual documents from other collections. It's commonly used to reference related documents.
+
+javascript
+
 - Session Cookie: Manages user sessions and ensures security through session cookies
 
 <h2 id="layout">🎨 Layout</h2>
+<img src="https://github.com/mesbol6647/BE-07-HOTEL-API-/blob/main/ERDHOTEL.png" alt="Image Example" >
+
 <h2 id="technologies">💻 Technologies</h2>
 
 - Node.js
