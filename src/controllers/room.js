@@ -4,7 +4,7 @@
 ------------------------------------------------------- */
 
 const room = require('../models/room')
-
+const Reservation=require('../models/reservation')
 module.exports = {
 
     list: async (req, res) => {
@@ -21,12 +21,52 @@ module.exports = {
                 </ul>
             `
         */
+            let customFilter = {  }
+            /*Müsait Odaları Listeleme*/
+                //list by datefilter:
+                // URL?arrival_date=2024-01-01&departure_date=2024-02-02
+            const{arrival_date: getArrivalDate, departure_date: getDepartureDate}=req.query
+            if(getArrivalDate && getDepartureDate ){
 
-        const data = await res.getModelList(room)
+               const reservedRooms= await Reservation.find({
+                    
+                $nor: [
+                    { arrival_date: { $gt: getDepartureDate } }, // gt: >
+                    { departure_date: { $lt: getArrivalDate } } // lt: <
+                ]
+            }, { _id: 0, roomId: 1 }).distinct('roomId')
+             console.log(reservedRooms)
+
+            // Gelen Data:
+            // [
+            //     { roomId: new ObjectId("660d9d2932ba8b3174a05721") },
+            //     { roomId: new ObjectId("660d9d2932ba8b3174a05721") }
+            // ]
+            // convert to Filtre Data (distinct);
+            // [
+            //    new ObjectId("660d9d2932ba8b3174a05721"),
+            //    new ObjectId("660d9d2932ba8b3174a05721")
+            // ]
+
+            // Filter objesine NotIN (nin) ekle:
+            if (reservedRooms.length) {
+                customFilter._id = { $nin: reservedRooms}
+            }
+            // console.log(customFilter)        
+
+
+            }else{
+                req.errorStatusCode= 401
+                throw new Error(' arrivalDate and departureDate queries are required')
+            }
+
+            /*Müsait Odaları Listeleme*/
+
+        const data = await res.getModelList(room, customFilter)
 
         res.status(200).send({
             error: false,
-            details: await res.getModelListDetails(room),
+            details: await res.getModelListDetails(room, customFilter),
             data
         })
     },

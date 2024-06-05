@@ -21,8 +21,13 @@ module.exports = {
                 </ul>
             `
         */
+        // Başka bir kullanıcı datasını görmesini engelle:
+        let customFilter = {}
+        if (!req.user.isAdmin && !req.user.isStaff) {
+            customFilter = { userId: req.user._id }
+        }
 
-        const data = await res.getModelList(reservation)
+        const data = await res.getModelList(reservation, customFilter, {path:"roomId"})
 
         res.status(200).send({
             error: false,
@@ -71,9 +76,13 @@ module.exports = {
             #swagger.tags = ["reservations"]
             #swagger.summary = "Get Single reservation"
         */
-       
+        // Başka bir kullanıcı datasını görmesini engelle:
+        let customFilter = {}
+        if (!req.user.isAdmin && !req.user.isStaff) {
+            customFilter = { userId: req.user._id }
+        }
       
-        const data = await reservation.findOne({ _id: req.params.id })
+        const data = await reservation.findOne({ _id: req.params.id, ...customFilter }).populate({path:"roomId"})
 
         res.status(200).send({
             error: false,
