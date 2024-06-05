@@ -48,6 +48,12 @@ module.exports = {
                 }
             }
         */
+
+            //userId gönderilmemişse req.user'dan al veya admin/staff değilse
+       if((!req.user.isAdmin && !req.user.isStaff) || !req.body?.userId){
+        req.body.userId=req.user._id
+       }
+      
         /*
         req.body.isStaff=false
         req.body.isAdmin=false
@@ -66,15 +72,8 @@ module.exports = {
             #swagger.summary = "Get Single reservation"
         */
        
-        //? Yetkisiz kullanıcının başka bir kullanıcıyı yönetmesini engelle (sadece kendi verileri):
-        // if (!req.reservation.isAdmin) {
-        //     req.params.id = req.reservation.id
-        // }
-        // const data = await reservation.findOne({ _id: req.params.id })
-
-        //? Yetkisiz kullanıcının başka bir kullanıcıyı yönetmesini engelle (sadece kendi verileri):
-        const id = req.reservation.isAdmin ? req.params.id : req.reservation.id
-        const data = await reservation.findOne({ _id: id })
+      
+        const data = await reservation.findOne({ _id: req.params.id })
 
         res.status(200).send({
             error: false,
@@ -100,9 +99,11 @@ module.exports = {
                 }
             }
         */
+// admin dışıdaki kimse rezervasyona ait userıd değiştiremez
+       if(!req.user.isAdmin){
+        delete req.body.userId
+       }
 
-        //? Yetkisiz kullanıcının başka bir kullanıcıyı yönetmesini engelle (sadece kendi verileri):
-        if (!req.reservation.isAdmin) req.params.id = req.reservation._id
         const data = await reservation.updateOne({ _id: req.params.id }, req.body, { runValidators: true })
 
         res.status(202).send({
