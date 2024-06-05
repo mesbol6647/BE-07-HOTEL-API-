@@ -27,9 +27,7 @@ This project is a backend application utilizing various methods for search, filt
 - Custom Filter:Allows users to define and apply custom filtering logic to query the database based on specific criteria. This feature enables complex and flexible data retrieval by combining multiple conditions and logical operators.
 - Populate:Mongoose method used to replace a path in a document with actual documents from other collections. It's commonly used to reference related documents.
 
-javascript
 
-- Session Cookie: Manages user sessions and ensures security through session cookies
 
 <h2 id="layout">🎨 Layout</h2>
 <img src="https://github.com/mesbol6647/BE-07-HOTEL-API-/blob/main/ERDHOTEL.png" alt="Image Example" >
@@ -56,7 +54,7 @@ Here you describe how to run your project locally
 How to clone your project
 
 ```bash
-git clone https://github.com/mesbol6647/BE-04--Pizza-Api-.git
+git clone https://github.com/mesbol6647/BE-07-HOTEL-API-.git
 ```
 
 <h3>Starting</h3>
@@ -89,7 +87,7 @@ Special thank you for all people that contributed for this project.
 
 Here you will explain how other developers can contribute to your project. For example, explaining how can create their branches, which patterns to follow and how to open an pull request
 
-1. `git clone https://github.com/mesbol6647/BE-04--Pizza-Api-.git`
+1. `git clone https://github.com/mesbol6647/BE-07-HOTEL-API-.git`
 2. `git checkout -b feature/NAME`
 3. Follow commit patterns
 4. Open a Pull Request explaining the problem solved or feature made, if exists, append screenshot of visual modifications and wait for the review!
@@ -100,42 +98,6 @@ Here you will explain how other developers can contribute to your project. For e
 
 [💾 Commit pattern](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716)
 
-### Folder/File Structure:
 
-```
-    .env
-    .gitignore
-    index.js
-    package.json
-    readme.md
-    logs/
-    src/
-        configs/
-            dbConnection.js
-        controllers/
-            auth.js
-            order.js
-            pizza.js
-            token.js
-            topping.js
-            user.js
-        helpers/
-            passwordEncrypt.js
-            sync.js
-        middlewares/
-            authentication.js
-            errorHandler.js
-            queryHandler.js
-            logger.js
-            permissions.js
-        models/
-        routes/
-            auth.js
-            document.js
-            index.js
-            order.js
-            pizza.js
-            token.js
-            topping.js
-            user.js
-```
+
+
