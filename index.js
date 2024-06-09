@@ -30,7 +30,7 @@ app.use(express.json())
 app.use(require('./src/middlewares/authentication'))
 
 // Run Logger:
-app.use(require('./src/middlewares/logger'))
+// app.use(require('./src/middlewares/logger'))
 
 // res.getModelList():
 app.use(require('./src/middlewares/findSearchSortPage'))
