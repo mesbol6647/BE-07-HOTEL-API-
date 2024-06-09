@@ -15,18 +15,39 @@
     <h2 id="description">Description</h2>
 
 
-This project is a backend application utilizing various methods for search, filter, sorting, skip, and session cookies. It is designed to enable users to efficiently search, filter, and manage data.
+Booking Hotel Room Project <br>
+Customers;
+
+-can select start and end date and see the list of available rooms on selected dates.<br>
+-can not reserve rooms which are reserved by other customers on selected time period.<br>
+-can choose a room on the list and reserve that room, but can not reserve more than one room on a selected time period,<br>
+-can see the list of their reservations including past ones.<br>
+-can list, create, read their reservations.<br>
+-can not update, delete reservations. <br><br>
+Admins;
+
+-can make CRUD operations on Room table,<br>
+-can make CRUD operations on Customer (User) table,<br>
+-can make CRUD operations on Reservation table,<br>
+-It can be createdId and updatedId in Room model.<br> <br>
+
+There will be searching, sorting and pagination capabilities on list views.
 
 
 <h2 id="technologies">💻 Features </h2>
 
-- Search: Allows users to search the database with specific keywords.
-- Filter: Enables filtering of data based on specific criteria.
-- Sorting: Provides the ability to sort data in ascending or descending order.
-- Skip: Allows skipping a specified number of data entries to access subsequent entries.
-- Session Cookie: Manages user sessions and ensures security through session cookies
+- $or :Allows users to query the database to find documents that match any of the specified conditions.
+- $nor:Enables querying the database to find documents that do not match any of the specified conditions.
+- $nin:Provides the ability to query the database to find documents where a specified field's value is not in a given array of values.
+- distinct:Retrieves distinct values for a specified field across a single collection.
+- Custom Filter:Allows users to define and apply custom filtering logic to query the database based on specific criteria. This feature enables complex and flexible data retrieval by combining multiple conditions and logical operators.
+- Populate:Mongoose method used to replace a path in a document with actual documents from other collections. It's commonly used to reference related documents.
+
+
 
 <h2 id="layout">🎨 Layout</h2>
+<img src="https://github.com/mesbol6647/BE-07-HOTEL-API-/blob/main/ERDHOTEL.png" alt="Image Example" >
+
 <h2 id="technologies">💻 Technologies</h2>
 
 - Node.js
@@ -49,7 +70,7 @@ Here you describe how to run your project locally
 How to clone your project
 
 ```bash
-git clone https://github.com/mesbol6647/BE-04--Pizza-Api-.git
+git clone https://github.com/mesbol6647/BE-07-HOTEL-API-.git
 ```
 
 <h3>Starting</h3>
@@ -82,7 +103,7 @@ Special thank you for all people that contributed for this project.
 
 Here you will explain how other developers can contribute to your project. For example, explaining how can create their branches, which patterns to follow and how to open an pull request
 
-1. `git clone https://github.com/mesbol6647/BE-04--Pizza-Api-.git`
+1. `git clone https://github.com/mesbol6647/BE-07-HOTEL-API-.git`
 2. `git checkout -b feature/NAME`
 3. Follow commit patterns
 4. Open a Pull Request explaining the problem solved or feature made, if exists, append screenshot of visual modifications and wait for the review!
@@ -93,42 +114,6 @@ Here you will explain how other developers can contribute to your project. For e
 
 [💾 Commit pattern](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716)
 
-### Folder/File Structure:
 
-```
-    .env
-    .gitignore
-    index.js
-    package.json
-    readme.md
-    logs/
-    src/
-        configs/
-            dbConnection.js
-        controllers/
-            auth.js
-            order.js
-            pizza.js
-            token.js
-            topping.js
-            user.js
-        helpers/
-            passwordEncrypt.js
-            sync.js
-        middlewares/
-            authentication.js
-            errorHandler.js
-            queryHandler.js
-            logger.js
-            permissions.js
-        models/
-        routes/
-            auth.js
-            document.js
-            index.js
-            order.js
-            pizza.js
-            token.js
-            topping.js
-            user.js
-```
+
+
