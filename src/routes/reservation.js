@@ -12,14 +12,14 @@ const permissions =require('../middlewares/permissions')
 
 
 router.route('/')
-    .get( permissions.isLogin, reservation.list)
-    .post(permissions.isLogin, reservation.create)
+    .get( reservation.list)
+    .post( reservation.create)
 
 router.route('/:id')
-    .get(permissions.isLogin, reservation.read)
-    .put(permissions.isStaff, reservation.update)
-    .patch(permissions.isStaff, reservation.update)
-    .delete(permissions.isAdmin, reservation.delete)
+    .get( reservation.read)
+    .put( reservation.update)
+    .patch( reservation.update)
+    .delete( reservation.delete)
 
 /* ------------------------------------------------------- */
 module.exports = router
