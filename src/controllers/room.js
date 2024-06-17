@@ -98,15 +98,17 @@ module.exports = {
             #swagger.summary = "Get Single Room"
             
         */  
-       
-        const data = await room.findOne({ _id: id })
-
+            const { id } = req.params;
+            const data = await room.findOne({ _id: id });    
+            
         res.status(200).send({
             error: false,
             data
         })
-
+           
     },
+       
+   
 
     update: async (req, res) => {
         /*
