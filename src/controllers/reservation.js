@@ -51,14 +51,17 @@ module.exports = {
         */
 
             //userId gönderilmemişse req.user'dan al veya admin/staff değilse
-       if((!req.user.isAdmin && !req.user.isStaff) || !req.body?.userId){
-        req.body.userId=req.user._id
-       }
+            if((!req.user.isAdmin && !req.user.isStaff) || !req.body.userId){
+                req.body.userId=req.user._id
+            }
+       
+       req.body.createdId=req.user._id
+       req.body.updatedId=req.user._id
       
-        /*
-        req.body.isStaff=false
-        req.body.isAdmin=false
-        */
+      
+        // req.body.isStaff=false
+        // req.body.isAdmin=false
+        
         const data = await reservation.create(req.body)
 
         res.status(201).send({
