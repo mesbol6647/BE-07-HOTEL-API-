@@ -37,19 +37,15 @@ module.exports = {
     },
 
     create: async (req, res) => {
-        /*
-            #swagger.tags = ["reservations"]
-            #swagger.summary = "Create reservation"
+       
+              /*
+            #swagger.tags = ["Reservations"]
+            #swagger.summary = "Create Reservation"
             #swagger.parameters['body'] = {
                 in: 'body',
                 required: true,
                 schema: {
-                    "reservationname": "test",
-                    "password": "1234",
-                    "email": "test@site.com",
-                    "isActive": true,
-                    "isStaff": false,
-                    "isAdmin": false,
+                    $ref: '#/definitions/Reservation'
                 }
             }
         */
