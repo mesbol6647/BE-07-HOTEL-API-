@@ -55,9 +55,9 @@ module.exports = {
         */
 
             //userId gönderilmemişse req.user'dan al veya admin/staff değilse
-    //    if((!req.user.isAdmin && !req.user.isStaff) || !req.body?.userId){
-    //     req.body.userId=req.user._id
-    //    }
+       if((!req.user.isAdmin && !req.user.isStaff) || !req.body?.userId){
+        req.body.userId=req.user._id
+       }
       
         /*
         req.body.isStaff=false
