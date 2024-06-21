@@ -39,24 +39,24 @@ module.exports = {
     create: async (req, res) => {
        
               /*
-            #swagger.tags = ["Reservations"]
-            #swagger.summary = "Create Reservation"
+            #swagger.tags = ["reservations"]
+            #swagger.summary = "Create reservation"
             #swagger.parameters['body'] = {
                 in: 'body',
                 required: true,
                 schema: {
-                    $ref: '#/definitions/Reservation'
+                    $ref: '#/definitions/reservation'
                 }
             }
         */
 
             //userId gönderilmemişse req.user'dan al veya admin/staff değilse
-            if((!req.user.isAdmin && !req.user.isStaff) || !req.body.userId){
-                req.body.userId=req.user._id
-            }
+    //         if((!req.user.isAdmin && !req.user.isStaff) || !req.body.userId){
+    //             req.body.userId=req.user._id
+    //         }
        
-       req.body.createdId=req.user._id
-       req.body.updatedId=req.user._id
+    //    req.body.createdId=req.user._id
+    //    req.body.updatedId=req.user._id
       
       
         // req.body.isStaff=false

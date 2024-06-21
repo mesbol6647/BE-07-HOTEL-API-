@@ -502,9 +502,9 @@
       },
       "post": {
         "tags": [
-          "Reservations"
+          "reservations"
         ],
-        "summary": "Create Reservation",
+        "summary": "Create reservation",
         "description": "",
         "parameters": [
           {
@@ -512,7 +512,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Reservation"
+              "$ref": "#/definitions/reservation"
             }
           }
         ],
